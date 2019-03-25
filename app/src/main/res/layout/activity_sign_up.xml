@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/skyblue"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SignUpActivity">
+
+    <ScrollView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="140dp"
+            android:layout_marginBottom="120dp"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="9"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="상호명"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editBizName"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:textSize="20dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="사업자 등록번호"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editBizNum"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:inputType="number"
+                android:textSize="20dp"
+                android:maxLength="10"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="비밀번호"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editSignUpPassword"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:inputType="textPassword"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="비밀번호 확인"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editSignUpPassword2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:inputType="textPassword"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="사업장주소"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editBizAddress"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="20dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white" />
+
+            <EditText
+                android:id="@+id/editBizAddress2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:textSize="20dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이메일주소"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:id="@+id/signUpConfirmButton"
+            android:textColor="@color/black"
+            android:text="확 인"
+            android:textSize="25dp"
+            android:layout_gravity="bottom"
+            android:background="@color/yellow"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

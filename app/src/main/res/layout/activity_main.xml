@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:orientation="vertical"
+    tools:context=".Activity.MainActivity">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/sliding_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        app:tabGravity="fill"
+        app:tabMode="scrollable"
+        app:tabMaxWidth="0dp"
+        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorHeight="2dp"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/black">
+    </android.support.design.widget.TabLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/snow"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:visibility="gone">
+
+
+            <ListView
+                android:id="@+id/selected_items"
+                android:divider="@null"
+                android:layout_width="match_parent"
+                android:layout_height="170dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/gray"
+                    android:text="취소"
+                    android:textColor="@color/white"/>
+
+                <Button
+                    android:id="@+id/payButton"
+                    android:layout_width="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/limegreen"
+                    android:text="주문하기"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

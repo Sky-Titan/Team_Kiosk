@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/skyblue"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SignInActivity2">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_weight="9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:text="비밀번호를 입력해주세요"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:layout_marginBottom="25dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_gravity="center"
+            android:id="@+id/editPassword"
+            android:inputType="textPassword"
+            android:maxLength="11"
+            android:textSize="20dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/white"
+            android:layout_width="300dp"
+            android:layout_height="30dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:id="@+id/passwordConfirmButton"
+            android:textColor="@color/black"
+            android:text="확 인"
+            android:textSize="25dp"
+            android:layout_gravity="bottom"
+            android:background="@color/yellow"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>

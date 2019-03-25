@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.kioskmainpage">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".Myapplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".Activity.BestNewMenu"></activity>
+        <activity
+            android:name=".Activity.SignUpPopupActivity"
+            android:theme="@style/NoTitleDialog" />
+        <activity android:name=".Activity.SignInActivity2" />
+        <activity android:name=".Activity.SignUpActivity" />
+        <activity
+            android:name=".Activity.SignInActivity"
+            android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.PopupActivity"
+            android:theme="@style/NoTitleDialog" />
+        <activity
+            android:name=".Activity.pay_popupActivity"
+            android:theme="@style/NoTitleDialog" />
+        <activity
+            android:name=".Activity.PayingPopupActivity"
+            android:theme="@style/NoTitleDialog" />
+        <activity
+            android:name=".Activity.Qr_popupActivity"
+            android:theme="@style/NoTitleDialog" />
+        <activity
+            android:name=".Activity.CompleteOrder_NopayActivity"
+            android:theme="@style/NoTitleDialog" />
+        <activity
+            android:name=".Activity.CompleteOrder_PayActivity"
+            android:theme="@style/NoTitleDialog" />
+    </application>
+
+</manifest>

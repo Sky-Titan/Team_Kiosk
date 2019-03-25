@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">KioskMainPage</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="size_array">
+        <item>Tall</item>
+        <item>Grande</item>
+        <item>Venti</item>
+    </string-array>
+
+    <string-array name="sirup_array">
+        <item>추가</item>
+        <item>추가안함</item>
+    </string-array>
+
+    <string-array name="place_array">
+        <item>매장</item>
+        <item>테이크아웃</item>
+    </string-array>
+    <string name="allmenu"><u>전체메뉴 보기</u></string>
+    <string name="signUp"><u>회원가입</u></string>
+</resources>

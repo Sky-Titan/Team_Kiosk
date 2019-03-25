@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dip"
+    android:layout_height="310dip"
+    android:background="#FFFFFF"
+    android:layout_centerInParent="true">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/relative">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="주문이 완료 되었습니다"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주문번호"
+        android:gravity="center"
+        android:textColor="#7FDDBC"
+        android:id="@+id/tx1"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/shape"
+        android:id="@+id/circle"
+        android:layout_below="@+id/tx1"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/order_num"
+
+        android:layout_alignBottom="@+id/circle"
+        android:layout_alignLeft="@+id/circle"
+        android:layout_alignRight="@+id/circle"
+        android:layout_alignTop="@+id/circle"
+        android:gravity="center"
+
+
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주문번호를 기억해주세요"
+        android:gravity="center"
+        android:textColor="#707070"
+        android:layout_below="@+id/circle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="35dp"
+        android:id="@+id/pay_finalatext"/>
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnFinish"
+        android:background="#7FDDBC"
+        android:textColor="@color/white"
+        android:text="주문완료"
+        android:layout_below="@+id/relative"/>
+
+
+
+
+
+
+
+
+</RelativeLayout>
