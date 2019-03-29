@@ -26,8 +26,6 @@ public class BestNewMenu extends AppCompatActivity {
         allmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(BestNewMenu.this,MainActivity.class);
-                startActivity(intent);
                 finish();
             }
         });

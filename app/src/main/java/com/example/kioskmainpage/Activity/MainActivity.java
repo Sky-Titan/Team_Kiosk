@@ -70,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         myapp.setOrderNum(0);
         myapp.getOrderNum();
         //주문번호 전역변수를 위함
+        Intent intent_BestNewMenu = new Intent(this, BestNewMenu.class);
+        intent_BestNewMenu.putExtra("data", "Test Popup");
+        startActivityForResult(intent_BestNewMenu, 1);
     }
 
     public void hideMenu() {

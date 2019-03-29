@@ -48,7 +48,7 @@ public class SignInActivity2 extends AppCompatActivity {
         public void onClick(View view) {
             String password = edit_password.getText().toString();
             if(passwordValidator(password)) {
-                Intent i = new Intent(view.getContext(), BestNewMenu.class);
+                Intent i = new Intent(view.getContext(), MainActivity.class);
                 startActivity(i);
                 finish();
             }
