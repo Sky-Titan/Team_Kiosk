@@ -27,6 +27,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:text="5001020002"
             android:layout_gravity="center"
             android:id="@+id/biz_num"
             android:inputType="number"

@@ -27,6 +27,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:text="1234567"
             android:layout_gravity="center"
             android:id="@+id/editPassword"
             android:inputType="textPassword"

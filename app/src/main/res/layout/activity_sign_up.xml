@@ -11,9 +11,10 @@
     tools:context=".Activity.SignUpActivity">
 
     <ScrollView
+        android:layout_weight="11"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp">
 
         <LinearLayout
             android:layout_marginTop="140dp"
@@ -33,6 +34,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:text="상호"
                 android:id="@+id/editBizName"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="25dp"
@@ -51,6 +53,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:text="5001020001"
                 android:id="@+id/editBizNum"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="25dp"
@@ -69,6 +72,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:text="1234567"
                 android:id="@+id/editSignUpPassword"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="25dp"
@@ -85,11 +89,29 @@
                 android:textColor="@color/white"
                 android:textSize="20dp" />
 
+
             <EditText
+                android:text="1234567"
                 android:id="@+id/editSignUpPassword2"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="25dp"
                 android:inputType="textPassword"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="휴대폰번호"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+            <EditText
+                android:text="01085900001"
+                android:id="@+id/editSignUpHP"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:inputType="number"
                 android:textSize="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
@@ -103,6 +125,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:text="대구 달서구 진천로 77"
                 android:id="@+id/editBizAddress"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
@@ -114,6 +137,7 @@
                 android:background="@color/white" />
 
             <EditText
+                android:text=""
                 android:id="@+id/editBizAddress2"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="25dp"
@@ -132,6 +156,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:text="test@mobilekiosk.co.kr"
                 android:id="@+id/editEmail"
                 android:layout_marginTop="10dp"
                 android:textSize="20dp"

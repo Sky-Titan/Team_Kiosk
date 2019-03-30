@@ -30,8 +30,9 @@ public class SignUpPopupActivity extends AppCompatActivity {
         signUpDoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(view.getContext(), SignInActivity.class);
-                startActivity(i);
+                finish();
+                //Intent i = new Intent(view.getContext(), SignInActivity.class);
+                //startActivity(i);
             }
         });
     }

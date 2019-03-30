@@ -1,6 +1,10 @@
 package com.example.kioskmainpage.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +16,16 @@ import android.widget.Toast;
 
 import com.example.kioskmainpage.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,6 +37,9 @@ public class SignUpActivity extends AppCompatActivity {
     String email;
     String password1;
     String password2;
+
+    String signup_url="http://mobilekiosk.co.kr/admin/api/company.php";
+    String result_json;//회원가입 요청후 리턴값 받아옴
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
         String password2;
         String address;
         String email;
-
+        String hp;
         @Override
         public void onClick(View view) {
             EditText edit_biz_name = (EditText)findViewById(R.id.editBizName);
@@ -65,6 +82,7 @@ public class SignUpActivity extends AppCompatActivity {
             EditText edit_address2 = (EditText)findViewById(R.id.editBizAddress2);
             EditText edit_email = (EditText)findViewById(R.id.editEmail);
             edit_email.setHint("~~~@~~~.com 형식 입력" );
+            EditText edit_hp = (EditText)findViewById(R.id.editSignUpHP);
 
             bizName = edit_biz_name.getText().toString();
             bizNum = edit_biz_num.getText().toString();
@@ -72,7 +90,7 @@ public class SignUpActivity extends AppCompatActivity {
             password2 = edit_password2.getText().toString();
             address = edit_address.getText().toString()+edit_address2.getText().toString();
             email = edit_email.getText().toString();
-
+            hp = edit_hp.getText().toString();
 
             if(!bizNumValidator(bizNum)){
                 Toast.makeText(view.getContext(), "사업자번호를 확인해주세요", Toast.LENGTH_SHORT).show();
@@ -85,8 +103,10 @@ public class SignUpActivity extends AppCompatActivity {
                 return;
             }else {
                 //TODO:서버에 회원가입 정보를 넘겨주고 등록절차 구현
-                Intent i = new Intent(view.getContext(), SignUpPopupActivity.class);
-                startActivity(i);
+                System.out.println("insertdata시작");
+                InsertData insertData = new InsertData();
+                insertData.execute(signup_url,bizNum,bizName,password1,email,hp,address);
+
             }
         }
     }
@@ -113,4 +133,111 @@ public class SignUpActivity extends AppCompatActivity {
         pattern = Pattern.compile(bizNum_PATTERN);
         return pattern.matcher(bizNum).matches();
     }
+    class InsertData extends AsyncTask<String, Void, String> {
+        ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressDialog = ProgressDialog.show(SignUpActivity.this,
+                    "Please Wait", null, true, true);
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            result_json=result;
+            progressDialog.dismiss();
+            validReturnValue();
+        }
+
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            String mb_id = (String)params[1];
+            String mb_name = (String)params[2];
+            String mb_password = (String)params[3];
+            String mb_email = (String)params[4];
+            String mb_hp = (String)params[5];
+            String mb_addr1= (String)params[6];
+
+            String serverURL = (String)params[0];
+
+            String postParameters = "mb_id="+mb_id+"&mb_name=" + mb_name + "&mb_password="+mb_password + "&mb_email="+mb_password+"&mb_hp="+mb_hp+"&mb_addr1="+mb_addr1;
+            System.out.println(postParameters);
+            try{
+                URL url = new URL(serverURL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+
+
+                httpURLConnection.setReadTimeout(5000);
+                httpURLConnection.setConnectTimeout(5000);
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.connect();
+
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                outputStream.write(postParameters.getBytes("UTF-8"));
+                outputStream.flush();
+                outputStream.close();
+
+
+                int responseStatusCode = httpURLConnection.getResponseCode();
+
+                InputStream inputStream;
+                if(responseStatusCode == HttpURLConnection.HTTP_OK) {
+                    inputStream = httpURLConnection.getInputStream();
+                }
+                else{
+                    inputStream = httpURLConnection.getErrorStream();
+                }
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+
+                while((line = bufferedReader.readLine()) != null){
+                    sb.append(line);
+                }
+
+                System.out.println("json 리턴: "+sb.toString());
+                bufferedReader.close();
+
+
+                return sb.toString();
+            }catch (Exception e) {
+
+                return new String("Error: " + e.getMessage());
+            }
+
+        }
+    }
+    protected void validReturnValue(){//서버에 회원가입 요청 보내고 온 정보 json 형태로 받고 pasing
+        try{
+            JSONObject jsonObj = new JSONObject(result_json);
+            String resultOfreturn=jsonObj.getString("result");
+            String msgOfreturn = jsonObj.getString("msg");
+            System.out.println(resultOfreturn);
+            System.out.println(msgOfreturn);
+            if(resultOfreturn.equals("Y"))//회원가입완료
+            {
+                Intent intent = new Intent(SignUpActivity.this,SignUpPopupActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else//회원가입 실패
+            {
+                Toast.makeText(SignUpActivity.this,msgOfreturn,Toast.LENGTH_SHORT).show();
+            }
+
+
+
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+    }
+
 }

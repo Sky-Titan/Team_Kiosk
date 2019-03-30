@@ -32,7 +32,7 @@ public class SignInActivity extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
 
-        EditText EditBizNum = (EditText)findViewById(R.id.biz_num);
+        final EditText EditBizNum = (EditText)findViewById(R.id.biz_num);
         EditBizNum.setHint("10자리 숫자");
 
         Button signUpButton =  (Button)findViewById(R.id.signUpButton);
