@@ -21,7 +21,6 @@
         android:layout_height="wrap_content" />
     <ImageButton
         android:id="@+id/bestimg_bestmenu"
-        android:src="@drawable/americano"
         android:scaleType="fitXY"
         android:background="@drawable/imagebutton_rounded"
         android:layout_weight="2.3"
@@ -46,7 +45,6 @@
         />
     <TextView
         android:id="@+id/bestname_bestmenu"
-        android:text="아메리카노"
         android:textAlignment="center"
         android:layout_weight="0.1"
         android:textSize="16dp"
@@ -83,7 +81,6 @@
             android:layout_height="0dp">
             <ImageButton
                 android:id="@+id/newimg1_bestmenu"
-                android:src="@drawable/jeju_muffin"
                 android:scaleType="fitXY"
                 android:background="@drawable/rounded"
                 android:layout_weight="1"
@@ -92,7 +89,6 @@
                 android:layout_height="match_parent"/>
             <ImageButton
                 android:id="@+id/newimg2_bestmenu"
-                android:src="@drawable/blueberrybagel"
                 android:scaleType="fitXY"
                 android:background="@drawable/rounded"
                 android:layout_marginRight="8dp"
@@ -101,7 +97,6 @@
                 android:layout_height="match_parent"/>
             <ImageButton
                 android:id="@+id/newimg3_bestmenu"
-                android:src="@drawable/greenteamuffin"
                 android:scaleType="fitXY"
                 android:background="@drawable/rounded"
                 android:layout_weight="1"
@@ -116,7 +111,6 @@
             android:layout_height="0dp">
             <TextView
                 android:id="@+id/newname1_bestmenu"
-                android:text="제주감귤머핀"
                 android:textAlignment="center"
                 android:layout_weight="1"
                 android:textSize="12dp"
@@ -127,7 +121,6 @@
                 />
             <TextView
                 android:id="@+id/newname2_bestmenu"
-                android:text="블루베리 베이글"
                 android:textAlignment="center"
                 android:layout_weight="1"
                 android:textSize="12dp"
@@ -138,7 +131,6 @@
                 />
             <TextView
                 android:id="@+id/newname3_bestmenu"
-                android:text="녹차머핀"
                 android:textAlignment="center"
                 android:layout_weight="1"
                 android:textSize="12dp"
