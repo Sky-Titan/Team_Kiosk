@@ -27,7 +27,7 @@ public class DownloadUnzip {
 
     ArrayList<String> FileNames = new ArrayList<>();
     //TODO: 실제 서버로 변경
-    String serverURL = "http://13.209.116.70"; //임시 테스트 서버입니다.
+    String serverURL = "http://mobilekiosk.co.kr/api_file/tmp"; //TODO:임시 테스트 서버 : http://13.209.116.70 정식 서버 : http://mobilekiosk.co.kr/api_file/tmp
 
     String savePath;
     String dst;
@@ -87,7 +87,7 @@ public class DownloadUnzip {
     //서버(테스트용)에서 전체 다운로드하고 unpackZip()실행하는 부분
     //TODO: 서버만들어지면 수정
     public void doDownUnzip() {
-        dst = savePath + "/test";
+        dst = savePath +"";//TODO:임시 서버 사용시엔 뒤에 /test붙이기
 
 
         Thread thread = new Thread() {
@@ -137,9 +137,9 @@ public class DownloadUnzip {
             OutputStream os = null;
             HttpURLConnection conn = null;
             String destinationFilePath = destinationFolder + "/" + FileNames.get(i);
-            Log.d(TAG, "start download : From : " + urlStr + "/test/" + FileNames.get(i) + " To : " + destinationFilePath);
+            Log.d(TAG, "start download : From : " + urlStr + "/" + FileNames.get(i) + " To : " + destinationFilePath);//TODO:임시서버사용시엔 "start download : From : " + urlStr + "/test/" + FileNames.get(i) + " To : " + destinationFilePath
             try {
-                URL url = new URL(urlStr + "/test/" + FileNames.get(i));
+                URL url = new URL(urlStr + "/" + FileNames.get(i));//TODO:임시서버사용시엔 urlStr + "/test/" + FileNames.get(i)
                 conn = (HttpURLConnection) url.openConnection();
 
                 is = conn.getInputStream();
@@ -168,7 +168,7 @@ public class DownloadUnzip {
 
                 if (conn != null) conn.disconnect();
             }
-            Log.d(TAG, "download finish : " + urlStr + "/test/" + FileNames.get(i));
+            Log.d(TAG, "download finish : " + urlStr + "/" + FileNames.get(i));//TODO:임시서버사용시엔 "download finish : " + urlStr + "/test/" + FileNames.get(i)
         }
     }
 
@@ -244,8 +244,8 @@ public class DownloadUnzip {
     public void downLoadQRImage() {
         final Thread thread = new Thread() {
             HttpURLConnection conn = null;
-            String destination = savePath + "/qrImage/qrImage.png";
-            String folder = savePath + "/qrImage";
+            String destination = savePath + "/qrImage.png";//TODO:임시서버사용시엔 /qrImage/qrImage.png  붙이기
+            String folder = savePath +"";//TODO:임시서버사용시엔 뒤에/qrImage  붙이기
             @Override
             public void run() {
                 try {
@@ -253,8 +253,8 @@ public class DownloadUnzip {
                     if(!folder_f.exists()) folder_f.mkdirs();
                     File file = new File(destination);
                     Log.d(TAG, "dst path : " + destination);
-                    URL url = new URL(serverURL + "/qr/QRcode.png");
-                    Log.d(TAG, "qr target dst : " + serverURL + "/qr/QRcode.png");
+                    URL url = new URL(serverURL + "/QRcode.png");//TODO:임시서버사용시엔 /qr/QRcode.png  붙이기
+                    Log.d(TAG, "qr target dst : " + serverURL + "/QRcode.png");//TODO:임시서버사용시엔 /qr/QRcode.png  붙이기
                     conn = (HttpURLConnection) url.openConnection();
                     conn.setDoInput(true);
                     conn.connect();

@@ -50,7 +50,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
         //TODO: 지금은 앱이 실행될 때마다 다운로드,압축해제를 실행하는데 서버에 DB가 생기면 그대로 만들고 그냥 실행시 load만 하도록 수정
         downloadUnzip.doDownUnzip();
 
-        menuManager = new MenuManager(context.getFilesDir().getAbsolutePath() + "/test", folder_names);
+        menuManager = new MenuManager(context.getFilesDir().getAbsolutePath() +"", folder_names);//TODO:test서버 사용시엔 getAbsolutePath() + "/test"
         tab_names = menuManager.getTabNames();
     }
 

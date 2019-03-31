@@ -63,6 +63,7 @@ public class SignInActivity2 extends AppCompatActivity {
             String password = edit_password.getText().toString();
 
             if(passwordValidator(password)) {
+                //서버에 인증요청 보냄
                 InsertData insertData = new InsertData();
                 insertData.execute(login_url,bizNum,password);
             }
@@ -78,6 +79,8 @@ public class SignInActivity2 extends AppCompatActivity {
         } else
             return true;
     }
+
+    //server에 인증 요청
     class InsertData extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
 

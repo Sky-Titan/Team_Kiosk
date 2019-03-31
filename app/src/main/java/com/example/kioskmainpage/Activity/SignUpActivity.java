@@ -104,6 +104,7 @@ public class SignUpActivity extends AppCompatActivity {
             }else {
                 //TODO:서버에 회원가입 정보를 넘겨주고 등록절차 구현
                 System.out.println("insertdata시작");
+                //서버에 인증요청보냄
                 InsertData insertData = new InsertData();
                 insertData.execute(signup_url,bizNum,bizName,password1,email,hp,address);
 
