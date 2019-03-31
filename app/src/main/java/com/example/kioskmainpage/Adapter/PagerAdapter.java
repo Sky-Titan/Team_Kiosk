@@ -32,7 +32,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
         this.context = context;
 
         //서버에서 다운로드, 압축해제를 위한 DownloadUnzip 객체 생성, 내부저장소 절대경로 전달
-        DownloadUnzip downloadUnzip = new DownloadUnzip(context.getFilesDir().getAbsolutePath());
+        DownloadUnzip downloadUnzip = new DownloadUnzip(context.getFilesDir().getAbsolutePath(),false);
         //서버에서 다운 받아와야할 zip 목록들의 이름을 읽어옴
         categories = downloadUnzip.getFileNames();
 

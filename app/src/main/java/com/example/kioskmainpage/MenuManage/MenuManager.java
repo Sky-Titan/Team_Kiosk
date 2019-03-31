@@ -141,7 +141,10 @@ public class MenuManager {
         for (int i = 0; i < menus.size(); i++) {
             Menu m = menus.get(i);
             if (m.menu_folder.equals(category))
+            {
+                Log.i("menu m : ",m.menu_name);
                 result.add(m);
+            }
         }
         return result;
     }

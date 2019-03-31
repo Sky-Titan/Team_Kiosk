@@ -31,21 +31,26 @@ public class DownloadUnzip {
 
     String savePath;
     String dst;
+    boolean isBestNew; //bestnew menu 인지 아닌지 판단
 
-
-    public DownloadUnzip(String savePath) {
+    public DownloadUnzip(String savePath,boolean isBestNew) {
         this.savePath = savePath;
-        getFileNamesFromServer();
+        this.isBestNew=isBestNew;
+        getFileNamesFromServer(isBestNew);
     }
 
 
     //웹 서버(테스트용)에서 파일이름 읽어옴
     //TODO: 서버 만들어지면 읽어 오는 함수를 전부 바꿔야 합니다.
-    private void getFileNamesFromServer() {
+    private void getFileNamesFromServer(final boolean isBestNew) {
         Thread thread = new Thread() {
             @Override
             public void run() {
-                String filename_path = "/getCategories.php";
+                String filename_path;
+                if(!isBestNew) //메인 메뉴일경우
+                    filename_path = "/getCategories.php";
+                else//베스트 메뉴일경우
+                    filename_path = "/getBestNew.php";
                 try {
                     URL url = new URL(serverURL + filename_path);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -126,6 +131,7 @@ public class DownloadUnzip {
             }
 
         }
+        if (isBestNew==false)
         downLoadQRImage();
     }
 
