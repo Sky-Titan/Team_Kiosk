@@ -122,13 +122,15 @@ public class DownloadUnzip {
             } else {
                 Log.d(TAG, "unpack failed : " + "From : " + dst + "/" + FileNames.get(i) + " To : " + "/" + categoryFolder);
             }
-
+            // 2중압축해제를 방지 위한 주석 기존 zip파일안의 zip 형식 제거
+            /*
             //아까전에 압축해제할 폴더에 이미지 zip파일을 다시 압축해제.
             if (unpackZip(dst + "/" + categoryFolder + "/menu_img.zip", "/images")) {
                 Log.d(TAG, "image unpack success");
             } else {
                 Log.d(TAG, "image unpack failed");
             }
+            */
 
         }
         if (isBestNew==false)
