@@ -78,7 +78,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.CustomViewHolder> {
         File imageFile = new File(menu.getBitmap());
         bitmap = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
 
-        FrameLayout.LayoutParams img_param = new FrameLayout.LayoutParams(180, 180);//메인메뉴 원형 이미지들 크기 조절
+        FrameLayout.LayoutParams img_param = new FrameLayout.LayoutParams(210, 210);//메인메뉴 원형 이미지들 크기 조절
         img_param.gravity = Gravity.CENTER;
 
         viewHolder.menu_image.setLayoutParams(img_param);

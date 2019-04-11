@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = new Intent(MainActivity.this,LoadingActivity.class);
+        startActivity(intent);
         //상,하단 바 제거
 
         int uiOptions = getWindow().getDecorView().getSystemUiVisibility();

@@ -170,6 +170,7 @@ public class SignInActivity2 extends AppCompatActivity {
                 Intent intent = new Intent(SignInActivity2.this,MainActivity.class);
                 startActivity(intent);
                 finish();
+                return;
             }
             else//로그인 실패
             {

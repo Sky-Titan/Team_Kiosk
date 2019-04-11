@@ -52,6 +52,7 @@ public class BestNewMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                return;
             }
         });
 

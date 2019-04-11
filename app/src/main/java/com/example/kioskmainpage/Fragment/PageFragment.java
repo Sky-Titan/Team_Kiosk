@@ -99,7 +99,7 @@ public class PageFragment extends Fragment {
 
     public void createView(View view) {
         recyclerView = (RecyclerView)view.findViewById(R.id.menu_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 4));
+        recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 3));
         recyclerView.setAdapter(adapter);
 
 
