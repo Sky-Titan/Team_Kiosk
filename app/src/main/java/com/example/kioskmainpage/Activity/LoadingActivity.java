@@ -15,15 +15,15 @@ import java.util.ArrayList;
 public class LoadingActivity extends AppCompatActivity {
 
 
-    //서버에서 다운로드, 압축해제를 위한 DownloadUnzip 객체 생성, 내부저장소 절대경로 전달
+    //서버에서 다운로드, 압축해제를 위한 DownloadUnzip 객체 선언
     DownloadUnzip downloadUnzip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
-        downloadUnzip = new DownloadUnzip(this.getFilesDir().getAbsolutePath(),false);//TODO: 파라매타에서 가져오는걸로 수정해
+        downloadUnzip = new DownloadUnzip(this.getFilesDir().getAbsolutePath(),false); //DownloadUnzip 객체 생성
 
-
+        //로딩창 실행
         CheckTypesTask task = new CheckTypesTask();
         task.execute();
 

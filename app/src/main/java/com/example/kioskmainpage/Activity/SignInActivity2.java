@@ -171,7 +171,7 @@ public class SignInActivity2 extends AppCompatActivity {
             System.out.println(msgOfreturn);
             if(resultOfreturn.equals("Y"))//로그인완료
             {
-                //로그인 완료되면 MainActivity 띄운다.
+                //로그인 완료되면 LoadingActivity 띄운다.
                 Intent intent = new Intent(SignInActivity2.this,LoadingActivity.class);
                 startActivity(intent);
                 finish();

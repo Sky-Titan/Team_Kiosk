@@ -25,7 +25,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     private static final String TAG = "testtest**PagerAdapter";
     MenuManager menuManager;
-
+    //기존 PagerAdapter에서 DownloadUnzip을 통해 down 및 unzip 하던것을 LodingActivitiy에서 대신하고 categories만 받아오는 걸로 변경
     public PagerAdapter(FragmentManager fm, Context context, ArrayList<String> Pre_categories) {
         super(fm);
         Log.d(TAG, "constructor");
