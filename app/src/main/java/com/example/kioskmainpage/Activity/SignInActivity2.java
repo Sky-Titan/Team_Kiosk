@@ -28,7 +28,7 @@ public class SignInActivity2 extends AppCompatActivity {
 
     private static final String TAG = "testtest**signIn2";
     EditText edit_password;
-    String login_url="http://mobilekiosk.co.kr/admin/api/login.php";
+    String login_url="http://mobilekiosk.co.kr/admin/api/login.php";//서버 url
     String result_json;//로그인 요청후 리턴값 받아옴
     String bizNum;
     @Override
@@ -45,13 +45,16 @@ public class SignInActivity2 extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
 
+        //SignInActivity에서 넘겨받은 사업자 번호 정보 intent로 넘겨받음
         Intent data = getIntent();
         bizNum = data.getStringExtra("bizNum");
         Log.d(TAG, "biznum : " +bizNum);
 
+        //비밀번호 객체 받아옴
         edit_password = (EditText)findViewById(R.id.editPassword);
         edit_password.setHint("7~11자리 비밀번호");
 
+        //로그인 버튼 리스너
         Button confirmButton = (Button)findViewById(R.id.passwordConfirmButton);
         confirmButton.setOnClickListener(new confirmOnClick());
 
@@ -73,6 +76,7 @@ public class SignInActivity2 extends AppCompatActivity {
             }
         }
     }
+    //비밀번호가 조건에 맞는지 확인
     public boolean passwordValidator(String password) {
         if(password.length()<6 || password.length()>12) {
             return false;
@@ -167,6 +171,7 @@ public class SignInActivity2 extends AppCompatActivity {
             System.out.println(msgOfreturn);
             if(resultOfreturn.equals("Y"))//로그인완료
             {
+                //로그인 완료되면 MainActivity 띄운다.
                 Intent intent = new Intent(SignInActivity2.this,MainActivity.class);
                 startActivity(intent);
                 finish();

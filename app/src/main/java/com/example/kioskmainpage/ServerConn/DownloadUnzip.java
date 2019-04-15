@@ -34,9 +34,9 @@ public class DownloadUnzip {
     boolean isBestNew; //bestnew menu 인지 아닌지 판단
 
     public DownloadUnzip(String savePath,boolean isBestNew) {
-        this.savePath = savePath;
-        this.isBestNew=isBestNew;
-        getFileNamesFromServer(isBestNew);
+        this.savePath = savePath;//저장 경로 지정
+        this.isBestNew=isBestNew;//BestNewMenu인지 아닌지
+        getFileNamesFromServer(isBestNew);//server에서 다운 받을 파일이름들 불러옴
     }
 
 
@@ -84,6 +84,7 @@ public class DownloadUnzip {
         }
     }
 
+    //다운 파일 이름들 리턴
     public ArrayList<String> getFileNames() {
         return FileNames;
     }
@@ -102,7 +103,7 @@ public class DownloadUnzip {
                 if (!f.exists()) {
                     f.mkdirs();
                 }
-                downloadZipFile(serverURL, dst);
+                downloadZipFile(serverURL, dst);//zip파일들 다운로드
             }
         };
         thread.start();
@@ -137,7 +138,7 @@ public class DownloadUnzip {
         downLoadQRImage();
     }
 
-
+    //zip파일들 다운로드
     public void downloadZipFile(String urlStr, String destinationFolder) {
 
         for (int i = 0; i < FileNames.size(); i++) {

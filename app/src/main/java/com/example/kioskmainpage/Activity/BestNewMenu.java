@@ -47,6 +47,7 @@ public class BestNewMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_best_new_menu);
 
+        //전체 메뉴 보기 버튼(클릭시 BestNewMenu액티비티가 꺼지면서 자연스럽게 MainActivity가 등장
         allmenu=(Button) findViewById(R.id.allmenu_bestmenu);
         allmenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +57,7 @@ public class BestNewMenu extends AppCompatActivity {
             }
         });
 
+        //best 메뉴와 new메뉴들 image button 객체와 메뉴이름 textview 객체 받아옴
         best=(ImageButton)findViewById(R.id.bestimg_bestmenu);
         new1=(ImageButton)findViewById(R.id.newimg1_bestmenu);
         new2=(ImageButton)findViewById(R.id.newimg2_bestmenu);
@@ -92,6 +94,7 @@ public class BestNewMenu extends AppCompatActivity {
         Log.i("menus : ",menus.get(0).menu_name);
         setMenuSetting();//메뉴 이미지 파일, 이름 설정
 
+        //각 메뉴의 imageButton 클릭 시 리스너 등록 (클릭 시 PopupActivity 띄움)
         best.setOnClickListener(new menuOnclick(getApplicationContext(),menus.get(0)));
         new1.setOnClickListener(new menuOnclick(getApplicationContext(),menus.get(1)));
         new2.setOnClickListener(new menuOnclick(getApplicationContext(),menus.get(2)));

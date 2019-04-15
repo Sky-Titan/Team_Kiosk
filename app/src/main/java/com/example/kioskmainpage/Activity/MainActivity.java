@@ -35,10 +35,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //바로 로딩액티비티 띄움
         Intent intent = new Intent(MainActivity.this,LoadingActivity.class);
         startActivity(intent);
-        //상,하단 바 제거
 
+        //상,하단 바 제거
         int uiOptions = getWindow().getDecorView().getSystemUiVisibility();
         int newUiOptions = uiOptions;
         newUiOptions ^= View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
@@ -72,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
         myapp.setOrderNum(0);
         myapp.getOrderNum();
         //주문번호 전역변수를 위함
+
+        //BestNewMenu액티비티 띄움
         Intent intent_BestNewMenu = new Intent(this, BestNewMenu.class);
         intent_BestNewMenu.putExtra("data", "Test Popup");
 
