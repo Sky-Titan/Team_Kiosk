@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //바로 로딩액티비티 띄움
-        Intent intent = new Intent(MainActivity.this,LoadingActivity.class);
-        startActivity(intent);
+        //LoadingActivity로부터 categories를 받아옴
+        Intent Pre_categories = getIntent() ;
+        ArrayList<String> categories  = Pre_categories.getStringArrayListExtra("categories");
 
         //상,하단 바 제거
         int uiOptions = getWindow().getDecorView().getSystemUiVisibility();
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         //Fragment를 생성해서 카테고리별 메뉴를 보여줄 뷰페이져 어댑터 생성 및 적용
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         Log.d(TAG, "set adapter to view pager");
-        viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager(), MainActivity.this));
+        viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager(), MainActivity.this, categories));
 
         //탭 + 뷰페이져 적용
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
@@ -69,15 +69,15 @@ public class MainActivity extends AppCompatActivity {
         Button payButton = (Button)findViewById(R.id.payButton);
         payButton.setOnClickListener(onClickHandler);
 
+        //주문번호 전역변수를 위함
         Myapplication myapp=(Myapplication) getApplication();
         myapp.setOrderNum(0);
         myapp.getOrderNum();
-        //주문번호 전역변수를 위함
+
 
         //BestNewMenu액티비티 띄움
         Intent intent_BestNewMenu = new Intent(this, BestNewMenu.class);
         intent_BestNewMenu.putExtra("data", "Test Popup");
-
         startActivityForResult(intent_BestNewMenu, 1);
     }
 

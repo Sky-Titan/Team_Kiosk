@@ -51,7 +51,7 @@ public class Qr_popupActivity extends AppCompatActivity implements View.OnClickL
         PayCancel.setOnClickListener(this);
         PayRequest.setOnClickListener(this);
 
-        File imgFile = new File(getFilesDir().getAbsolutePath()+"/qrImage/qrImage.png");
+        File imgFile = new File(getFilesDir().getAbsolutePath()+"/qrImage.png");// 기존"/qrImage/qrImage.png"에서 "/qrImage.png"로 수정
         bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
         Log.d(TAG, "file abs path : " + imgFile.getAbsolutePath());
         QrImage.setImageBitmap(bitmap);

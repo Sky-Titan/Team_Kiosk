@@ -27,7 +27,7 @@ public class DownloadUnzip {
 
     ArrayList<String> FileNames = new ArrayList<>();
     //TODO: 실제 서버로 변경
-    String serverURL = "http://mobilekiosk.co.kr/api_file/tmp"; //TODO:임시 테스트 서버 : http://13.209.116.70 정식 서버 : http://mobilekiosk.co.kr/api_file/tmp
+    String serverURL = "http://118.45.243.10"; //TODO:임시 테스트 서버 : http://13.209.116.70 정식 서버 : http://mobilekiosk.co.kr/api_file/tmp
 
     String savePath;
     String dst;

@@ -26,15 +26,13 @@ public class PagerAdapter extends FragmentPagerAdapter {
     private static final String TAG = "testtest**PagerAdapter";
     MenuManager menuManager;
 
-    public PagerAdapter(FragmentManager fm, Context context) {
+    public PagerAdapter(FragmentManager fm, Context context, ArrayList<String> Pre_categories) {
         super(fm);
         Log.d(TAG, "constructor");
         this.context = context;
 
-        //서버에서 다운로드, 압축해제를 위한 DownloadUnzip 객체 생성, 내부저장소 절대경로 전달
-        DownloadUnzip downloadUnzip = new DownloadUnzip(context.getFilesDir().getAbsolutePath(),false);
-        //서버에서 다운 받아와야할 zip 목록들의 이름을 읽어옴
-        categories = downloadUnzip.getFileNames();
+        //Loading에서 받아온 categories를 입력
+        categories = Pre_categories;
 
         //서버의 저장된 .zip 파일을 folder_names에 확장자를 지우고 저장해서 내부 저장소의 디렉토리 이름으로 사용
         for (int i = 0; i < categories.size(); i++) {
@@ -44,11 +42,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
         //Fragment 몇 개를 만들 것인지 category의 개수를 보고 결정
         PAGE_COUNT = categories.size();
-
-
-        //전체 다운로드, 압축해제 하는 부분
-        //TODO: 지금은 앱이 실행될 때마다 다운로드,압축해제를 실행하는데 서버에 DB가 생기면 그대로 만들고 그냥 실행시 load만 하도록 수정
-        downloadUnzip.doDownUnzip();
 
         menuManager = new MenuManager(context.getFilesDir().getAbsolutePath() +"", folder_names);//TODO:test서버 사용시엔 getAbsolutePath() + "/test"
         tab_names = menuManager.getTabNames();
