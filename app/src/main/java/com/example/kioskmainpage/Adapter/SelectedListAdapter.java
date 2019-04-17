@@ -1,4 +1,3 @@
-package com.example.kioskmainpage.Adapter;
 ﻿package com.example.kioskmainpage.Adapter;
 
 
