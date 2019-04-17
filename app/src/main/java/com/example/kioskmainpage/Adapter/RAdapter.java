@@ -33,6 +33,9 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.CustomViewHolder> {
 
     private ArrayList<Menu> mList;
 
+
+    //메인 메뉴 각 카테고리 메뉴들 리스트 데이터를 읽어서 어댑터뷰에 공급
+
     public class CustomViewHolder extends RecyclerView.ViewHolder {
         protected ImageView best;
         protected ImageView menu_image;
@@ -40,6 +43,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.CustomViewHolder> {
         protected TextView menu_price;
         Context mContext;
 
+        //menu_item.xml 로 연결
         public CustomViewHolder(View view, Context context) {
             super(view);
             this.best = (ImageView) view.findViewById(R.id.best_icon_imageview);
@@ -69,6 +73,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.CustomViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final CustomViewHolder viewHolder, int position) {
+       //ListView 퍼포먼스 높이기 위한 viewHolder, findViewById 호출 시 비용 큰 문제 해
         viewHolder.menu_name.setTextSize(20);
         viewHolder.menu_price.setTextSize(17);
 
@@ -78,7 +83,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.CustomViewHolder> {
         File imageFile = new File(menu.getBitmap());
         bitmap = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
 
-        FrameLayout.LayoutParams img_param = new FrameLayout.LayoutParams(210, 210);//메인메뉴 원형 이미지들 크기 조절
+        FrameLayout.LayoutParams img_param = new FrameLayout.LayoutParams(210, 210);//메인메뉴 원형 이미지들 크기 조절,제한
         img_param.gravity = Gravity.CENTER;
 
         viewHolder.menu_image.setLayoutParams(img_param);
