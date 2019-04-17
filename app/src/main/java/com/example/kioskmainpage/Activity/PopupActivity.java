@@ -1,4 +1,4 @@
-﻿package com.example.kioskmainpage.Activity;
+package com.example.kioskmainpage.Activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -55,21 +55,17 @@ public class PopupActivity extends AppCompatActivity {
         before_state = intent.getIntegerArrayListExtra("options");
         Log.d(TAG, "get index : " +index);
 
-        //메뉴 이름을 받음
         TextView tv_menu_name = (TextView) findViewById(R.id.menuName);
         tv_menu_name.setText(menu.getMenu_name());
         tv_menu_name.setPaintFlags(tv_menu_name.getPaintFlags()| Paint.FAKE_BOLD_TEXT_FLAG);
 
-        //메뉴 가격을 받음
         TextView tv_menu_price = (TextView) findViewById(R.id.menuPrice);
         tv_menu_price.setText(menu.getMenu_price() + "원");
 
-        //이미지를 비트맵으로 받음
         Bitmap bitmap = null;
         File imageFile = new File(menu.getBitmap());
         bitmap = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
 
-        //이미지를 출력
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setImageBitmap(bitmap);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -137,7 +133,6 @@ public class PopupActivity extends AppCompatActivity {
             }
         }
 
-        //주문 정보를 저장
         Intent intent = new Intent();
         intent.putExtra("index", index);
         Log.d(TAG, "put index : " + index);

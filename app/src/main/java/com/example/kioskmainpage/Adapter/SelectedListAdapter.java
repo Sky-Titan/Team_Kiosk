@@ -1,5 +1,4 @@
 package com.example.kioskmainpage.Adapter;
-﻿package com.example.kioskmainpage.Adapter;
 
 
 import android.content.Context;
@@ -54,7 +53,6 @@ public class SelectedListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Log.d("TAG", "getView");
-        //선택된 메뉴가 없을 시 이전 팝업창 출력
         if (convertView == null) {
             final Context context = parent.getContext();
             if (inflater == null) {
@@ -63,7 +61,6 @@ public class SelectedListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.selected_item, parent, false);
         }
 
-        //메뉴, 가격, 수량 텍스트 및 수량 수정, 변경 취소 버튼 생성
         TextView menuNameView = (TextView) convertView.findViewById(R.id.menuName);
         TextView menuPriceView = (TextView) convertView.findViewById(R.id.priceView);
         TextView menuCntView = (TextView) convertView.findViewById(R.id.countView);
@@ -72,18 +69,15 @@ public class SelectedListAdapter extends BaseAdapter {
         Button ModifyButton = (Button) convertView.findViewById(R.id.changeButton);
         Button DeleteButton = (Button) convertView.findViewById(R.id.deleteButton);
 
-        //메뉴 선택 팝업창 제거
         LinearLayout bottomOptionLayout = (LinearLayout) convertView.findViewById(R.id.bottomOptionLayout);
         bottomOptionLayout.removeAllViews();
 
-        //리스너 정보를 받아옴
         SelectedMenu item = (SelectedMenu) getItem(position);
         plusButton.setOnClickListener(new addListener(item, this));
         minusButton.setOnClickListener(new minusListener(item, this));
         DeleteButton.setOnClickListener(new deleteListener(selectedMenus, position, this, context));
         ModifyButton.setOnClickListener(new modifyListener(selectedMenus, position, context));
 
-        //수량 및 전체 가격 표시
         int price = Integer.parseInt(selectedMenus.get(position).getMenu_price());
         int cnt = selectedMenus.get(position).getCnt();
         String price_for_view = "" + price * cnt;
@@ -93,20 +87,17 @@ public class SelectedListAdapter extends BaseAdapter {
         String result = "" + selectedMenus.get(position).getCnt();
         menuCntView.setText(result + "개");
 
-        //선택한 내용을 arraylist로 생성
         ArrayList<Integer> options = selectedMenus.get(position).getChoices();
         for (int i = 0; i < selectedMenus.get(position).getOptions().size(); i++) {
             TextView textView = new TextView(context);
             LinearLayout.LayoutParams optionParam = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             optionParam.setMargins(30, 0, 0, 0);
 
-        //선택된 메뉴 출력
             textView.setLayoutParams(optionParam);
             String optionName = selectedMenus.get(position).getOptions().get(i).getOption_name();
             String selectedOption = selectedMenus.get(position).getOptions().get(i).getOptions().get(options.get(i));
             Log.d(TAG, "bitmap : " + selectedMenus.get(position).getBitmap());
 
-        //메뉴 옵션 출력
             if (i == 0) {
                 textView.setText("ㄴ" + optionName + " : " + selectedOption);
             } else {
@@ -120,20 +111,18 @@ public class SelectedListAdapter extends BaseAdapter {
     }
 
     public void addItem(Menu menu, ArrayList<Integer> choices) {
-        //선택된 메뉴 추가
         Log.d(TAG, "additem, now size : " + selectedMenus.size());
         SelectedMenu selectedMenu = new SelectedMenu(menu.getMenu_name(), menu.getMenu_price(), menu.getBitmap(), menu.getMenu_folder(), menu.getOptions(), choices);
         selectedMenus.add(selectedMenu);
     }
 
     public void clearItem(SelectedListAdapter adapter) {
-        //취소시 선택된 메뉴 초기화
         selectedMenus.clear();
         adapter.notifyDataSetChanged();
     }
 
     public class addListener implements View.OnClickListener {
-        //수량 추가 버튼 리스너
+
         SelectedMenu selectedMenu;
         SelectedListAdapter adapter;
 
@@ -150,7 +139,7 @@ public class SelectedListAdapter extends BaseAdapter {
     }
 
     public class minusListener implements View.OnClickListener {
-        //수량 감소 버튼 리스너
+
         SelectedMenu selectedMenu;
         SelectedListAdapter adapter;
 
@@ -219,7 +208,6 @@ public class SelectedListAdapter extends BaseAdapter {
     }
 
     public int getPriceSum(){
-        //총 가격 계산
         int sum=0;
         for(int i=0; i<selectedMenus.size();i++){
             int cnt = selectedMenus.get(i).getCnt();
