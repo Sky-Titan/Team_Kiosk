@@ -22,6 +22,8 @@ import java.util.ArrayList;
 
 public class BestNewMenu extends AppCompatActivity {
 
+    /* 작성자 : 2019-1 종합설계프로젝트 팀 (팀장 박준현)*/
+
     Button allmenu;
     ImageButton best;
     ImageButton new1,new2,new3;

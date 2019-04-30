@@ -40,7 +40,7 @@ public class DownloadUnzip {
     }
 
 
-    //웹 서버(테스트용)에서 파일이름 읽어옴
+    //웹 서버(php파일에서)에서 받아올 파일이름(=카테고리명) 읽어옴
     //TODO: 서버 만들어지면 읽어 오는 함수를 전부 바꿔야 합니다.
     private void getFileNamesFromServer(final boolean isBestNew) {
         Thread thread = new Thread() {
@@ -84,13 +84,13 @@ public class DownloadUnzip {
         }
     }
 
-    //다운 파일 이름들 리턴
+    //다운 파일 이름들(=카테고리명) 리턴
     public ArrayList<String> getFileNames() {
         return FileNames;
     }
 
 
-    //서버(테스트용)에서 전체 다운로드하고 unpackZip()실행하는 부분
+    //서버(테스트용)에서 전체 다운로드하고 unpackZip()실행하는 부분(두개의 기능 1.다운로드(downloadZipFile) 2.다운로드 파일 압축 해제(unpackZip)
     //TODO: 서버만들어지면 수정
     public void doDownUnzip() {
         dst = savePath +"";//TODO:임시 서버 사용시엔 뒤에 /test붙이기
@@ -134,7 +134,7 @@ public class DownloadUnzip {
             */
 
         }
-        if (isBestNew==false)
+        if (isBestNew==false) //bestnew 메뉴가 아닐 경우에(메인화면일때만) qr 코드 이미지 받아옴(이유 : 중복 다운 방지)
         downLoadQRImage();
     }
 
@@ -216,12 +216,13 @@ public class DownloadUnzip {
                 filename = ze.getName();
                 Log.d(TAG, "entry file name : " + filename);
 
-                if (ze.isDirectory()) {
+                if (ze.isDirectory()) {//디렉토리인 경우 디렉토리(폴더)생성 후 스킵
                     File fmd = new File(unpackFolder + "/" + filename);
                     fmd.mkdirs();
                     continue;
                 }
 
+                //파일일 경우 엔트리 단위로 압축 해제
                 FileOutputStream fout = new FileOutputStream(unpackFolder + "/" + filename);
                 while ((count = zis.read(buffer)) != -1) {
                     fout.write(buffer, 0, count);

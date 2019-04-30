@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class LoadingActivity extends AppCompatActivity {
 
 
+    /* 작성자 : 2019-1 종합설계프로젝트 팀 (팀장 박준현)*/
     //서버에서 다운로드, 압축해제를 위한 DownloadUnzip 객체 선언
     DownloadUnzip downloadUnzip;
     @Override
