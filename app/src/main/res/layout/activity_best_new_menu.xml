@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:weightSum="5"
     android:orientation="vertical"
-    tools:context=".Activity.BestNewMenu">
+    tools:context=".Activity.BestNewMenuActivity">
 
     <TextView
         android:id="@+id/best_bestmenu"

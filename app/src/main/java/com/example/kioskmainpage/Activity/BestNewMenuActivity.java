@@ -20,7 +20,7 @@ import com.example.kioskmainpage.ServerConn.DownloadUnzip;
 import java.io.File;
 import java.util.ArrayList;
 
-public class BestNewMenu extends AppCompatActivity {
+public class BestNewMenuActivity extends AppCompatActivity {
 
     /* 작성자 : 2019-1 종합설계프로젝트 팀 (팀장 박준현)*/
 
@@ -137,7 +137,7 @@ public class BestNewMenu extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(BestNewMenu.this, PopupActivity.class);
+            Intent intent = new Intent(BestNewMenuActivity.this, PopupActivity.class);
             intent.putExtra("menu", menu);
             intent.putIntegerArrayListExtra("options", null);
             startActivity(intent);//기존과 다르게 수정됨

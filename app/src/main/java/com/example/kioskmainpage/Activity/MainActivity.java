@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //BestNewMenu액티비티 띄움 작성자 : 2019-1 종합설계프로젝트 팀 (팀장 박준현)*/
-        Intent intent_BestNewMenu = new Intent(this, BestNewMenu.class);
+        Intent intent_BestNewMenu = new Intent(this, BestNewMenuActivity.class);
         intent_BestNewMenu.putExtra("data", "Test Popup");
         startActivityForResult(intent_BestNewMenu, 1);
     }
