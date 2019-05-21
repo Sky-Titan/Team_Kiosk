@@ -47,7 +47,7 @@ public class DownloadUnzip {
             @Override
             public void run() {
                 String filename_path;
-                if(!isBestNew) //메인 메뉴일경우
+                if(!isBestNew) //메인 메뉴일경우(
                     filename_path = "/getCategories.php";
                 else//베스트 메뉴일경우
                     filename_path = "/getBestNew.php";

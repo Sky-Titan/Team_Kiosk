@@ -86,7 +86,7 @@ public class SignInActivity2 extends AppCompatActivity {
 
     //server에 인증 요청
     class InsertData extends AsyncTask<String, Void, String> {
-        ProgressDialog progressDialog;
+
 
         @Override
         protected void onPreExecute() {

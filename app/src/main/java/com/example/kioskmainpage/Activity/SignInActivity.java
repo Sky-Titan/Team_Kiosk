@@ -60,6 +60,7 @@ public class SignInActivity extends AppCompatActivity {
         public void onClick(View view) {
             EditBizNum= (EditText)findViewById(R.id.biz_num);
             String biz_num = EditBizNum.getText().toString();
+
             //TODO: 서버에서 회원인증절차 구현
             if(biz_num.length()!=10){
                 Toast.makeText(view.getContext(), "사업자번호를 제대로 입력해주세요",Toast.LENGTH_SHORT).show();

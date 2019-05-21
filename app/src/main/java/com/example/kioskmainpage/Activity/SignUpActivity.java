@@ -31,12 +31,6 @@ import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
     private static final String TAG = "testtest**signup";
-    String bizName;
-    String bizNum;
-    String address;
-    String email;
-    String password1;
-    String password2;
 
     String signup_url="http://mobilekiosk.co.kr/admin/api/company.php";
     String result_json;//회원가입 요청후 리턴값 받아옴

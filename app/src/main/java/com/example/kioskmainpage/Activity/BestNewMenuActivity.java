@@ -32,9 +32,6 @@ public class BestNewMenuActivity extends AppCompatActivity {
 
     private ArrayList<Menu> menus=new ArrayList<>();
 
-    String best_price;
-    String new1_price,new2_price,new3_price;
-
     private int PAGE_COUNT;
     private ArrayList<String> categories;
     private ArrayList<String> folder_names = new ArrayList<>();
