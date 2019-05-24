@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -68,8 +69,8 @@ public class SelectedListAdapter extends BaseAdapter {
         TextView menuNameView = (TextView) convertView.findViewById(R.id.menuName);
         TextView menuPriceView = (TextView) convertView.findViewById(R.id.priceView);
         TextView menuCntView = (TextView) convertView.findViewById(R.id.countView);
-        Button plusButton = (Button) convertView.findViewById(R.id.plusButton);
-        Button minusButton = (Button) convertView.findViewById(R.id.minusButton);
+        ImageButton plusButton = (ImageButton) convertView.findViewById(R.id.plusButton);
+        ImageButton minusButton = (ImageButton) convertView.findViewById(R.id.minusButton);
         Button ModifyButton = (Button) convertView.findViewById(R.id.changeButton);
         Button DeleteButton = (Button) convertView.findViewById(R.id.deleteButton);
 

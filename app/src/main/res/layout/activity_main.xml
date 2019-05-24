@@ -13,14 +13,14 @@
         android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/orange"
+        android:background="@color/dark_gray"
         app:tabGravity="fill"
         app:tabMode="scrollable"
         app:tabMaxWidth="0dp"
-        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorColor="@color/dark_gray"
         app:tabIndicatorHeight="2dp"
         app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/black">
+        app:tabTextColor="@color/light_gray">
     </android.support.design.widget.TabLayout>
 
 
@@ -69,21 +69,23 @@
 
                 <Button
                     android:id="@+id/cancelButton"
-                    android:layout_width="150dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@color/gray"
+                    android:background="@color/light_gray"
+                    android:textSize="20dp"
                     android:text="취소"
                     android:textColor="@color/white"/>
 
                 <Button
                     android:id="@+id/payButton"
-                    android:layout_width="150dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@color/limegreen"
+                    android:background="@color/blue_green"
+                    android:textSize="20dp"
                     android:text="주문하기"
                     android:textColor="@color/white"/>
             </LinearLayout>

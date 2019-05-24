@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/skyblue"
+    android:background="@color/white"
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:layout_width="match_parent"
@@ -30,63 +30,63 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="상호명"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <EditText
                 android:text="상호"
                 android:id="@+id/editBizName"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="20dp"
                 android:textSize="20dp"
                 android:inputType="text"
                 android:maxLines="1"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white" />
+                android:layout_height="45dp"
+                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="사업자 등록번호"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <EditText
                 android:text="5001020001"
                 android:id="@+id/editBizNum"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="20dp"
                 android:inputType="number"
                 android:textSize="20dp"
                 android:maxLength="10"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white" />
+                android:layout_height="45dp"
+               />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="비밀번호"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <EditText
                 android:text="1234567"
                 android:id="@+id/editSignUpPassword"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="20dp"
                 android:inputType="textPassword"
                 android:textSize="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white" />
+                android:layout_height="45dp"
+                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="비밀번호 확인"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
 
 
@@ -94,65 +94,65 @@
                 android:text="1234567"
                 android:id="@+id/editSignUpPassword2"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="20dp"
                 android:inputType="textPassword"
                 android:textSize="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white" />
+                android:layout_height="45dp"
+                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="휴대폰번호"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
             <EditText
                 android:text="01085900001"
                 android:id="@+id/editSignUpHP"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="20dp"
                 android:inputType="number"
                 android:textSize="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white" />
+                android:layout_height="45dp"
+                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="사업장주소"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <EditText
                 android:text="대구 달서구 진천로 77"
                 android:id="@+id/editBizAddress"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:textSize="20dp"
                 android:inputType="text"
                 android:maxLines="1"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white" />
+                android:layout_height="45dp"
+                 />
 
             <EditText
                 android:text=""
                 android:id="@+id/editBizAddress2"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="20dp"
                 android:textSize="20dp"
                 android:inputType="text"
                 android:maxLines="1"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white" />
+                android:layout_height="45dp"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="이메일주소"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <EditText
@@ -163,8 +163,8 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white" />
+                android:layout_height="45dp"
+                />
         </LinearLayout>
 
     </ScrollView>
@@ -175,11 +175,11 @@
         android:layout_height="0dp">
         <Button
             android:id="@+id/signUpConfirmButton"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="확 인"
             android:textSize="25dp"
             android:layout_gravity="bottom"
-            android:background="@color/yellow"
+            android:background="@color/black"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

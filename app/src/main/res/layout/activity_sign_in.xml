@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/skyblue"
+    android:background="@color/white"
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:textSize="25dp"
             android:gravity="center"
             android:layout_marginBottom="25dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -34,17 +34,17 @@
             android:textSize="20dp"
             android:maxLength="10"
             android:layout_marginBottom="25dp"
-            android:background="@color/white"
+            android:textAlignment="center"
             android:layout_width="300dp"
-            android:layout_height="30dp" />
+            android:layout_height="45dp" />
 
         <Button
             android:id="@+id/signUpButton"
             android:text="@string/signUp"
             android:textSize="20dp"
             android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:background="@color/skyblue"
+            android:textColor="@color/dark_green"
+            android:background="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -56,11 +56,11 @@
         android:layout_height="0dp">
         <Button
             android:id="@+id/bizNumConfirmButton"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="확 인"
             android:textSize="25dp"
             android:layout_gravity="bottom"
-            android:background="@color/yellow"
+            android:background="@color/black"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

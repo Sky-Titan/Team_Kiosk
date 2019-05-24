@@ -64,6 +64,7 @@
             <Button
                 android:id="@+id/cancelButton"
                 android:onClick="mOnClose"
+                android:textColor="@color/black"
                 android:text="취소"
                 android:background="@color/gray"
                 android:layout_marginLeft="0dp"
@@ -75,7 +76,8 @@
                 android:id="@+id/confirmButton"
                 android:text="확인"
                 android:layout_weight="1"
-                android:background="@color/limegreen"
+                android:textColor="@color/black"
+                android:background="@color/yellow"
                 android:onClick="mOnClose"
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="0dp"

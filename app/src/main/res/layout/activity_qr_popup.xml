@@ -22,16 +22,16 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:id="@+id/PayCancel"
-            android:text="결제취소"
-            android:background="#EB5061"
+            android:text="결제 취소"
+            android:background="@color/light_gray"
             android:textColor="@color/white"
             />
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:id="@+id/PayRequest"
-            android:text="결제 확인 요청"
-            android:background="#F361A6"
+            android:text="결제 확인"
+            android:background="@color/red"
             android:textColor="@color/white"
             />
     </LinearLayout>

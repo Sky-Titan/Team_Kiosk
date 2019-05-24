@@ -87,16 +87,9 @@
         android:layout_height="35dp"
         android:id="@+id/btnFinish"
         android:layout_alignParentBottom="true"
-        android:background="#7FDDBC"
-        android:textColor="@color/white"
-        android:text="주문완료"
+        android:background="@color/yellow"
+        android:textColor="@color/black"
+        android:text="확  인"
         android:layout_below="@+id/relative"/>
-
-
-
-
-
-
-
 
 </RelativeLayout>
