@@ -5,6 +5,7 @@
     android:layout_height="310dip"
     android:background="#FFFFFF"
     android:layout_centerInParent="true">
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +22,6 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView"/>
-
 
 
     <TextView
