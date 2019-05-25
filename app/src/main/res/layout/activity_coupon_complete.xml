@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dip"
+    android:layout_height="400dip"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+
+    android:layout_centerInParent="true">
+
+    <LinearLayout
+        android:id="@+id/couponLayout_1"
+        android:layout_width="match_parent"
+        android:layout_height="400dip"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="7"
+        >
+        <TextView
+            android:id="@+id/customer_name"
+            android:layout_weight="2"
+            android:layout_marginHorizontal="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="'홍길동 님'"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:layout_below="@+id/circle"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="0dp"
+            />
+        <ImageView
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:src = "@drawable/coupon"/>
+
+        <TextView
+            android:layout_weight="3"
+            android:layout_marginHorizontal="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="☆쿠폰 적립이 완료 되었습니다☆
+적립 내역은 모바일 오더앱에서
+확인이 가능합니다
+"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/couponLayout_3"
+            android:layout_below="@+id/couponLayout_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/btnFinish_coupon_complete"
+                android:background="@color/yellow"
+                android:textColor="@color/black"
+                android:text="확 인"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

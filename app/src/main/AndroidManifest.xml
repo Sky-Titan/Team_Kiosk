@@ -14,8 +14,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Activity.Coupon_Activity"></activity>
-        <activity android:name=".Activity.LoadingActivity" />
+        <activity android:name=".Activity.CouponComplete_Activity"></activity>
+        <activity
+            android:name=".Activity.Coupon_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleDialog" />
+        <activity
+            android:name=".Activity.LoadingActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.BestNewMenuActivity"
             android:screenOrientation="portrait" />
