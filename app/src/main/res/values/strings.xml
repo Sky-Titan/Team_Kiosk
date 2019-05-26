@@ -20,5 +20,5 @@
         <item>테이크아웃</item>
     </string-array>
     <string name="allmenu"><u>전체메뉴 보기</u></string>
-    <string name="signUp"><u>회원가입</u></string>
+    <string name="signUp">회원가입</string>
 </resources>

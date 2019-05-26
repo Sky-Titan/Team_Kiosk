@@ -38,13 +38,14 @@
             android:layout_width="300dp"
             android:layout_height="45dp" />
 
-        <Button
+        <TextView
             android:id="@+id/signUpButton"
             android:text="@string/signUp"
             android:textSize="20dp"
             android:layout_gravity="center"
             android:textColor="@color/dark_green"
-            android:background="@color/white"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

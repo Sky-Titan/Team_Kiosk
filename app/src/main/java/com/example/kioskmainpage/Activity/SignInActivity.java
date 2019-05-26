@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kioskmainpage.R;
@@ -37,7 +38,7 @@ public class SignInActivity extends AppCompatActivity {
         EditBizNum.setHint("10자리 숫자");
 
         //회원가입 버튼 객체 & 리스너
-        Button signUpButton =  (Button)findViewById(R.id.signUpButton);
+        TextView signUpButton =  (TextView) findViewById(R.id.signUpButton);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
