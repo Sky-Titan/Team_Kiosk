@@ -15,11 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".Activity.CouponComplete_Activity"
-            android:screenOrientation="portrait"
             android:theme="@style/NoTitleDialog"></activity>
         <activity
             android:name=".Activity.Coupon_Activity"
-            android:screenOrientation="portrait"
             android:theme="@style/NoTitleDialog" />
         <activity
             android:name=".Activity.LoadingActivity"
@@ -29,7 +27,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.SignUpPopupActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/NoTitleDialog" />
         <activity
             android:name=".Activity.SignInActivity2"
@@ -52,27 +49,21 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.PopupActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/NoTitleDialog" />
         <activity
             android:name=".Activity.pay_popupActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/NoTitleDialog" />
         <activity
             android:name=".Activity.PayingPopupActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/NoTitleDialog" />
         <activity
             android:name=".Activity.Qr_popupActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/NoTitleDialog" />
         <activity
             android:name=".Activity.CompleteOrder_NopayActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/NoTitleDialog" />
         <activity
             android:name=".Activity.CompleteOrder_PayActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/NoTitleDialog" />
     </application>
 
