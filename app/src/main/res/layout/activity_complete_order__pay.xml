@@ -5,6 +5,7 @@
     android:layout_height="310dip"
     android:background="#FFFFFF"
     android:layout_centerInParent="true">
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +22,6 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView"/>
-
 
 
     <TextView
@@ -62,7 +62,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="주문번호를 기억해주세요"
+        android:text="쿠폰 적립시 주문번호가 함께 전송 됩니다"
         android:gravity="center"
         android:textColor="#707070"
         android:layout_below="@+id/circle"
@@ -71,21 +71,31 @@
         android:layout_marginBottom="35dp"
         android:id="@+id/pay_finalatext"/>
     </RelativeLayout>
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/btnFinish"
-        android:background="#7FDDBC"
-        android:textColor="@color/white"
-        android:text="주문완료"
-        android:layout_below="@+id/relative"/>
-
-
-
-
-
-
-
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/relative">
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/btnCoupon"
+            android:background="@color/skyblue"
+            android:textColor="@color/white"
+            android:text="쿠폰 적립"
+            />
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/btnFinish"
+            android:background="@color/yellow"
+            android:textColor="@color/black"
+            android:text="확 인"
+            />
+    </LinearLayout>
 
 </RelativeLayout>

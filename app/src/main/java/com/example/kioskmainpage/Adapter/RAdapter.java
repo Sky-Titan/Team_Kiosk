@@ -40,7 +40,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.CustomViewHolder> {
         protected ImageView best;
         protected ImageView menu_image;
         protected TextView menu_name;
-        protected TextView menu_price;
+       // protected TextView menu_price;
         Context mContext;
 
         //menu_item.xml 로 연결
@@ -49,7 +49,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.CustomViewHolder> {
             this.best = (ImageView) view.findViewById(R.id.best_icon_imageview);
             this.menu_image = (ImageView) view.findViewById(R.id.menu_image_view);
             this.menu_name = (TextView) view.findViewById(R.id.menu_name_view);
-            this.menu_price = (TextView) view.findViewById(R.id.menu_price_view);
+         //   this.menu_price = (TextView) view.findViewById(R.id.menu_price_view);
             this.mContext=context;
         }
 
@@ -75,7 +75,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.CustomViewHolder> {
     public void onBindViewHolder(@NonNull final CustomViewHolder viewHolder, int position) {
        //ListView 퍼포먼스 높이기 위한 viewHolder, findViewById 호출 시 비용 큰 문제 해
         viewHolder.menu_name.setTextSize(20);
-        viewHolder.menu_price.setTextSize(17);
+        //viewHolder.menu_price.setTextSize(17);
 
         Menu menu = mList.get(position);
 
@@ -98,7 +98,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.CustomViewHolder> {
 
         String commaNum = NumberFormat.getInstance().format(Integer.parseInt(menu.getMenu_price()));
         String won = Currency.getInstance(Locale.KOREA).getSymbol();
-        viewHolder.menu_price.setText(won + commaNum);
+       // viewHolder.menu_price.setText(won + commaNum);
 
         if(position%2==0){
             viewHolder.best.setVisibility(View.VISIBLE);

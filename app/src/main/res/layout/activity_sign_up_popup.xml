@@ -19,8 +19,8 @@
 
     <Button
         android:id="@+id/signUpDoneButton"
-        android:background="@color/limegreen"
-        android:textColor="@color/white"
+        android:background="@color/yellow"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:gravity="center"
         android:text="확 인"

@@ -24,7 +24,7 @@ public class BestNewMenuActivity extends AppCompatActivity {
 
     /* 작성자 : 2019-1 종합설계프로젝트 팀 (팀장 박준현)*/
 
-    Button allmenu;
+    TextView allmenu;
     ImageButton best;
     ImageButton new1,new2,new3;
     TextView best_name;
@@ -47,7 +47,7 @@ public class BestNewMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_best_new_menu);
 
         //전체 메뉴 보기 버튼(클릭시 BestNewMenu액티비티가 꺼지면서 자연스럽게 MainActivity가 등장
-        allmenu=(Button) findViewById(R.id.allmenu_bestmenu);
+        allmenu=(TextView) findViewById(R.id.allmenu_bestmenu);
         allmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

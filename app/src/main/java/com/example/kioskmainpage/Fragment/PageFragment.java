@@ -29,6 +29,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.kioskmainpage.R;
+import com.example.kioskmainpage.RecyclerDecoration;
 
 import java.io.File;
 import java.text.NumberFormat;
@@ -101,7 +102,8 @@ public class PageFragment extends Fragment {
         recyclerView = (RecyclerView)view.findViewById(R.id.menu_recyclerview);
         recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 3));
         recyclerView.setAdapter(adapter);
-
+        RecyclerDecoration spaceDecoration = new RecyclerDecoration(50);//줄간격 조절 작성자 : 2019-1 종합설계프로젝트 팀 (팀장 박준현)
+        recyclerView.addItemDecoration(spaceDecoration);
 
 
     }
